@@ -1,4 +1,6 @@
 Iotagive::Application.routes.draw do
+  resources :impacts
+
   devise_for :users
 
  get 'about' => 'pages#about'
