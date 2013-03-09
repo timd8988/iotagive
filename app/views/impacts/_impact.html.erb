@@ -1,9 +1,18 @@
-<tr>
-    <td><%= image_tag impact.image(:medium) %></td>
-    <td><%= impact.description %></td>
-    <td><%= link_to 'Show', impact %></td>
-    <% if current_user == impact.user %>
-    <td><%= link_to 'Edit', edit_impact_path(impact) %></td>
-    <td><%= link_to 'Destroy', impact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tr>
+ <div class="box">
+   <%= link_to (image_tag impact.image(:medium)), impact %>
+   <p class="description">
+   <%= impact.description %>
+   </p>
+   <p>
+   	<strong>
+   		Posted by <%= impact.user.name %>
+   	</strong>
+   </p>
+   <% if current_user == impact.user %>
+   <p>
+   <%= link_to 'Edit', edit_impact_path(impact) %>
+   <%= link_to 'Destroy', impact, method: :delete, data: { confirm: 'Are you sure?' } %>
+   </p> 
+   <% end %>
+  </div> 
+ 

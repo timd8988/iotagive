@@ -4,7 +4,7 @@ class ImpactsController < ApplicationController
   # GET /impacts
   # GET /impacts.json
   def index
-    @impacts = Impact.all
+    @impacts = Impact.order("created_at desc")
 
     respond_to do |format|
       format.html # index.html.erb
