@@ -1,4 +1,6 @@
 class ImpactsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
+
   # GET /impacts
   # GET /impacts.json
   def index
@@ -24,7 +26,7 @@ class ImpactsController < ApplicationController
   # GET /impacts/new
   # GET /impacts/new.json
   def new
-    @impact = Impact.new
+    @impact = current_user.impacts.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +36,13 @@ class ImpactsController < ApplicationController
 
   # GET /impacts/1/edit
   def edit
-    @impact = Impact.find(params[:id])
+    @impact = current_user.impacts.find(params[:id])
   end
 
   # POST /impacts
   # POST /impacts.json
   def create
-    @impact = Impact.new(params[:impact])
+    @impact = current_user.impacts.new(params[:impact])
 
     respond_to do |format|
       if @impact.save
@@ -56,7 +58,7 @@ class ImpactsController < ApplicationController
   # PUT /impacts/1
   # PUT /impacts/1.json
   def update
-    @impact = Impact.find(params[:id])
+    @impact = current_user.impacts.find(params[:id])
 
     respond_to do |format|
       if @impact.update_attributes(params[:impact])
@@ -72,7 +74,7 @@ class ImpactsController < ApplicationController
   # DELETE /impacts/1
   # DELETE /impacts/1.json
   def destroy
-    @impact = Impact.find(params[:id])
+    @impact = current_user.impacts.find(params[:id])
     @impact.destroy
 
     respond_to do |format|

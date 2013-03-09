@@ -5,7 +5,12 @@
   		<b>Description:</b>
   		<%= @impact.description %>
 	</p>
+	<p>
+  		<%= @impact.user.name %>
+	</p>
+	<% if current_user == @impact.user %>
 	<%= link_to 'Edit', edit_impact_path(@impact) %> |
+	<% end %>
 	<%= link_to 'Back', impacts_path %>
 		</div>
 	</div>
