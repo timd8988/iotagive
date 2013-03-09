@@ -1,4 +1,5 @@
 <tr>
+    <td><%= image_tag impact.image(:medium) %></td>
     <td><%= impact.description %></td>
     <td><%= link_to 'Show', impact %></td>
     <% if current_user == impact.user %>

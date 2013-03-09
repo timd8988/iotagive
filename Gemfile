@@ -4,7 +4,7 @@ gem 'rails', '3.2.8'
 gem 'devise'
 gem 'jquery-rails'
 gem 'simple_form'
-
+gem "paperclip", "~> 3.0"
 
 
 
