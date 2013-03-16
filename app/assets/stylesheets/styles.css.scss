@@ -3,6 +3,7 @@ $navbarBackgroundHighlight: white;
 $navbarBackground: white;
 @import 'bootstrap' ;
 
+
 body {
 	padding-top: 60px;
 }
@@ -12,6 +13,17 @@ body {
 .navbar-inner {
 	@include box-shadow(none !important);
 	border: 0;
+}
+
+
+.brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+    float: center;
 }
 
 .footer {
