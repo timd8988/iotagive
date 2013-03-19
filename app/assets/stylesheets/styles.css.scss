@@ -12,7 +12,12 @@ body {
 
 .navbar-inner {
 	@include box-shadow(none !important);
-	border: 0;
+	border: 1;
+	min-height: 65px;
+}
+
+.hero-unit {
+	padding: 20px;
 }
 
 
