@@ -5,7 +5,6 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'simple_form'
 gem "paperclip", "~> 3.0"
-gem 'flexslider'
 
 
 group :production do
